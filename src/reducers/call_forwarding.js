@@ -3,6 +3,8 @@ import * as callForwardingActions from '../actions/call_forwarding';
 const INITIAL_STATE = {
   localForwardList: [],
   localRingingList: [],
+  enabledRingingList: [],
+  enabledForwardNumber: '',
   fetchingStatus: false,
   status: {},
   lastOperationResult: null
@@ -18,6 +20,26 @@ export default (state = INITIAL_STATE, action) => {
           ...state.localForwardList
         ]
       };
+    case callForwardingActions.REMOVE_LOCAL_FORWARD_NUMBER:
+      return {
+        ...state,
+        localForwardList: [
+          { text: action.number, value: action.number },
+          ...state.localForwardList
+        ]
+      };
+
+    case callForwardingActions.CLEAR_LOCAL_FORWARD_LIST:
+      return {
+        ...state,
+        localForwardList: []
+      };
+
+    case callForwardingActions.SET_ENABLED_FORWARD_NUMBER:
+      return {
+        ...state,
+        enabledForwardNumber: action.newNumber
+      };
 
     case callForwardingActions.ADD_LOCAL_RINGING_NUMBER:
       return {
@@ -26,6 +48,24 @@ export default (state = INITIAL_STATE, action) => {
           { text: action.number, value: action.number },
           ...state.localRingingList
         ]
+      };
+    case callForwardingActions.REMOVE_LOCAL_RINGING_NUMBER:
+      return {
+        ...state,
+        localRingingList: state.localRingingList.filter(
+          item => item.value !== action.number.value
+        )
+      };
+    case callForwardingActions.CLEAR_LOCAL_RINGING_LIST:
+      return {
+        ...state,
+        localRingingList: []
+      };
+
+    case callForwardingActions.SET_ENABLED_RINGING_LIST:
+      return {
+        ...state,
+        enabledRingingList: action.newList
       };
 
     case callForwardingActions.CALL_FORWARDING_REQUEST:
