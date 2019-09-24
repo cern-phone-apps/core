@@ -10,7 +10,9 @@ const INITIAL_STATE = {
   personId: null,
   error: {},
   fetching: false,
-  doNotDisturb: false
+  doNotDisturb: false,
+  rememberNumber: false,
+  sendStats: true
 };
 
 /**
@@ -55,6 +57,16 @@ export default (state = INITIAL_STATE, action) => {
         doNotDisturb: null,
         error: action.payload.error,
         fetching: false
+      };
+    case meActions.SET_REMEMBER_NUMBER:
+      return {
+        ...state,
+        rememberNumber: action.rememberNumber
+      };
+    case meActions.SET_SEND_STATS:
+      return {
+        ...state,
+        sendStats: action.sendStats
       };
     default:
       return state;

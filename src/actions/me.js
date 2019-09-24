@@ -1,6 +1,10 @@
 import { RSAA } from 'redux-api-middleware';
 import { JwtTokenHandlerWeb, JwtTokenHandlerMobile } from '../util/tokens';
 
+export const SET_REMEMBER_NUMBER = '@@user/SET_REMEMBER_NUMBER';
+
+export const SET_SEND_STATS = '@@user/SET_SEND_STATS';
+
 export const ME_REQUEST = '@@user/ME_REQUEST';
 export const ME_SUCCESS = '@@user/ME_SUCCESS';
 export const ME_FAILURE = '@@user/ME_FAILURE';
@@ -10,6 +14,20 @@ export const SET_DO_NOT_DISTURB_SUCCESS = '@@status/SET_DO_NOT_DISTURB_SUCCESS';
 export const SET_DO_NOT_DISTURB_FAILURE = '@@status/SET_DO_NOT_DISTURB_SUCCESS';
 
 const API_PATH = '/api/v1';
+
+export function setRemberNumber(value) {
+  return {
+    type: SET_REMEMBER_NUMBER,
+    rememberNumber: value
+  };
+}
+
+export function setSendStats(value) {
+  return {
+    type: SET_SEND_STATS,
+    sendStats: value
+  };
+}
 
 export default function(apiEndpoint, type = 'mobile', tokenHandlerClass=null) {
   const buildApiURL = path => `${apiEndpoint}${API_PATH}${path}`;
