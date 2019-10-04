@@ -91,6 +91,7 @@ function processCallReceived(state, { callerName, callerNumber, uuid }) {
     receivingCall: true,
     uuid,
     tempRemote: {
+      ...state.tempRemote,
       name: callerName,
       phoneNumber: callerNumber,
       incoming: true,
@@ -151,7 +152,7 @@ const call = (state = initialState, action) => {
         ...state,
         remote: undefined,
         onCall: false
-      }
+      };
     case callActions.ADD_ADDITIONAL_CALL:
       return {
         ...state,
@@ -162,7 +163,7 @@ const call = (state = initialState, action) => {
         ...state,
         additionalCalls: state.additionalCalls - 1
       };
-      case callActions.ADDITIONAL_CALL_ACTIONS.SET_ADDITIONAL_CALL:
+    case callActions.ADDITIONAL_CALL_ACTIONS.SET_ADDITIONAL_CALL:
       return {
         ...state,
         additionalCall: action.additionalCall
@@ -174,7 +175,15 @@ const call = (state = initialState, action) => {
           ...state.tempRemote,
           callId: action.callId
         }
-      }
+      };
+    case callActions.SET_TONE_CALL_ID:
+      return {
+        ...state,
+        tempRemote: {
+          ...state.tempRemote,
+          toneCallId: action.callId
+        }
+      };
     default:
       return state;
   }

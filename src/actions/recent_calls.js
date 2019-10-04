@@ -21,7 +21,8 @@ export function addRecentCall(remote) {
     incoming: newRemote.incoming,
     startTime: newRemote.startTime,
     type: ADD_RECENT_CALL,
-    callId: newRemote.callId
+    callId: newRemote.callId,
+    toneCallId: newRemote.toneCallId
   };
 }
 
