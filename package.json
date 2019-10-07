@@ -1,18 +1,24 @@
 {
   "name": "dial-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
+  "author": "CERN",
+  "description": "Core package for the CERN Phone Application",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.13.0",
+    "fetch-mock": "^7.4.0",
+    "node-fetch": "^2.6.0",
     "nodemon": "^1.19.1",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "react-scripts": "3.2.0",
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.3.0"
   },
   "dependencies": {
     "js-cookie": "^2.2.0",
@@ -22,6 +28,13 @@
   },
   "scripts": {
     "watch": "nodemon -e js --watch src --exec \"rm -rf ../mobile/node_modules/dial-core && cp -R . ../mobile/node_modules/dial-core\"",
-    "watch-web": "nodemon -e js --watch src --exec \"rm -rf ../webapp/node_modules/dial-core && cp -R . ../webapp/node_modules/dial-core\""
+    "watch-web": "nodemon -e js --watch src --exec \"rm -rf ../webapp/node_modules/dial-core && cp -R . ../webapp/node_modules/dial-core\"",
+    "test": "react-scripts test"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/"
+    ]
   }
 }

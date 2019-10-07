@@ -6,18 +6,19 @@ export const CALL_MISSED = '@@call/CALL_MISSED';
 export const CALL_RECEIVED = '@@call/CALL_RECEIVED';
 export const CALL_ACCEPTED = '@@call/CALL_ACCEPTED';
 export const SET_CALL_ID = '@@call/SET_CALL_ID';
+export const SET_TONE_CALL_ID = '@@call/SET_TONE_CALL_ID';
 
 export const ADD_ADDITIONAL_CALL = '@@call/ADD_ADDITIONAL_CALL';
 export const REMOVE_ADDITIONAL_CALL = '@@call/REMOVE_ADDITIONAL_CALL';
 
 export const CALL_FINISHED_ACTIONS = {
-  FINISH_ONGOING_CALL : '@@call/FINISH_ONGOING_CALL',
+  FINISH_ONGOING_CALL: '@@call/FINISH_ONGOING_CALL',
   FINISH_TEMP_CALL: '@@call/FINISH_TEMP_CALL'
-}
+};
 
 export const ADDITIONAL_CALL_ACTIONS = {
   SET_ADDITIONAL_CALL: '@@call/SET_ADDITIONAL_CALL'
-}
+};
 /**
  * Action that triggers a call to a selected caller
  *
@@ -159,6 +160,18 @@ export function setAdditionalCall(additionalCall) {
 export function setCallId(callId) {
   return {
     type: SET_CALL_ID,
+    callId
+  };
+}
+
+/**
+ * Action triggered when a call is taking place.
+ *
+ * @returns {{type: string}} A dict
+ */
+export function setToneCallId(callId) {
+  return {
+    type: SET_TONE_CALL_ID,
     callId
   };
 }
