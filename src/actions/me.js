@@ -1,5 +1,4 @@
 import { RSAA } from 'redux-api-middleware';
-import { JwtTokenHandlerWeb, JwtTokenHandlerMobile } from '../util/tokens';
 
 export const ME_REQUEST = '@@user/ME_REQUEST';
 export const ME_SUCCESS = '@@user/ME_SUCCESS';
@@ -11,9 +10,13 @@ export const SET_DO_NOT_DISTURB_FAILURE = '@@status/SET_DO_NOT_DISTURB_SUCCESS';
 
 const API_PATH = '/api/v1';
 
-export default function(apiEndpoint, type = 'mobile', tokenHandlerClass=null) {
+export default function(
+  apiEndpoint,
+  type = 'mobile',
+  tokenHandlerClass = null
+) {
   const buildApiURL = path => `${apiEndpoint}${API_PATH}${path}`;
-  let authHandlerClass = tokenHandlerClass;
+  const authHandlerClass = tokenHandlerClass;
 
   return {
     getMe: () => ({

@@ -1,4 +1,4 @@
-import * as callActions from '../actions/call';
+import * as callActions from '../../actions/call';
 
 describe('call actions', () => {
   it('creates an action on CALL_REQUEST', () => {
@@ -111,6 +111,14 @@ describe('call actions', () => {
       callId: '12345'
     };
     expect(callActions.setCallId('12345')).toEqual(expectedAction);
+  });
+
+  it("creates an action to SET_TONE_CALL_ID", () => {
+    const expectedAction = {
+      type: "@@call/SET_TONE_CALL_ID",
+      callId: '12345'
+    };
+    expect(callActions.setToneCallId('12345')).toEqual(expectedAction);
   });
 
 });
