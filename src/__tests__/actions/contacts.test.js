@@ -34,7 +34,7 @@ describe('call forwarding synchronous actions', () => {
   });
 });
 
-describe('CallForwardinghActionFactory', () => {
+describe('ContactsActionFactory', () => {
   const TestHandler = {
     withAuth: ()=> ('header-example'),
     withRefresh: jest.fn()

@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import { apiMiddleware } from 'redux-api-middleware';
 import thunk from 'redux-thunk';
-import meActionFactory from '../../actions/me';
+import * as actions from '../../actions/me';
 
 import fetchMock from "fetch-mock";
 
@@ -17,7 +17,29 @@ class TestHandler {
 const middlewares = [thunk, apiMiddleware];
 const mockStore = configureMockStore(middlewares);
 
+describe('Me synchronous actions', () => {
+  it('creates an action on SET_REMEMBER_NUMBER', () => {
+    const rememberNumber = "12345"
+    const expectedAction = {
+      type: "@@user/SET_REMEMBER_NUMBER",
+      rememberNumber
+    };
+    expect(actions.setRemberNumber(rememberNumber)).toEqual(expectedAction);
+  });
+
+  it('creates an action on SET_SEND_STATS', () => {
+    const expectedAction = {
+      type: "@@user/SET_SEND_STATS",
+      sendStats: true
+    };
+    expect(actions.setSendStats(true)).toEqual(expectedAction);
+  });
+});
+
 describe('MeActionFactory', () => {
+
+  const meActionFactory = actions.default;
+
   it('creates the correct endpoint for getMe()', () => {
     const expectedResult = {
       '@@redux-api-middleware/RSAA': {

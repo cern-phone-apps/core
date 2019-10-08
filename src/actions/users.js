@@ -10,10 +10,14 @@ export const PROFILE_FAILURE = '@@search/PROFILE_FAILURE';
 
 const API_PATH = '/api/v1';
 
-export default function(apiEndpoint, type = 'mobile', tokenHandlerClass=null) {
+export default function(
+  apiEndpoint,
+  type = 'mobile',
+  tokenHandlerClass = null
+) {
   const buildApiURL = (path, name) => `${apiEndpoint}${API_PATH}${path}${name}`;
 
-  let authHandlerClass = tokenHandlerClass;
+  const authHandlerClass = tokenHandlerClass;
 
   return {
     findUserByUsername: name => ({

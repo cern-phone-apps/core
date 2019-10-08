@@ -1,5 +1,4 @@
 import { RSAA } from 'redux-api-middleware';
-import { JwtTokenHandlerWeb, JwtTokenHandlerMobile } from '../util/tokens';
 
 export const NUMBERS_REQUEST = '@@calls/NUMBERS_REQUEST';
 export const NUMBERS_SUCCESS = '@@calls/NUMBERS_SUCCESS';
@@ -15,9 +14,13 @@ const API_PATH = '/api/v1';
  * @param name username of the user to search
  * @returns {{}} The RSAA action
  */
-export default function(apiEndpoint, type = 'mobile', tokenHandlerClass=null) {
+export default function(
+  apiEndpoint,
+  type = 'mobile',
+  tokenHandlerClass = null
+) {
   const buildCallsApiEndpoint = path => `${apiEndpoint}${API_PATH}${path}`;
-  let authHandlerClass = tokenHandlerClass;
+  const authHandlerClass = tokenHandlerClass;
 
   return {
     getUserPhoneNumbers: () => ({

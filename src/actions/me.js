@@ -14,7 +14,6 @@ export const SET_DO_NOT_DISTURB_FAILURE = '@@status/SET_DO_NOT_DISTURB_SUCCESS';
 
 const API_PATH = '/api/v1';
 
-
 export function setRemberNumber(value) {
   return {
     type: SET_REMEMBER_NUMBER,
@@ -34,7 +33,6 @@ export default function(
   type = 'mobile',
   tokenHandlerClass = null
 ) {
-
   const buildApiURL = path => `${apiEndpoint}${API_PATH}${path}`;
   const authHandlerClass = tokenHandlerClass;
 
