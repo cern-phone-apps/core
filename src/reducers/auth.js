@@ -64,8 +64,8 @@ export default (state = INITIAL_STATE, action) => {
       };
     case authActions.TOKEN_REQUEST:
       return {
-        requestingToken: true,
-        ...state
+        ...state,
+        requestingToken: true
       };
     case authActions.TOKEN_RECEIVED:
       return {
