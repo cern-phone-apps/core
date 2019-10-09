@@ -14,7 +14,9 @@ describe('Recent Calls synchronous actions', () => {
       incoming: true,
       startTime: 12345,
       toneCallId: '123456',
-      callId: '123244'
+      callId: '123244',
+      startTime: 123456,
+      endTime: 1234567
     }
     const expectedAction = {
       ...recentCall,

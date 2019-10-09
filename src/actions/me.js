@@ -10,7 +10,7 @@ export const ME_FAILURE = '@@user/ME_FAILURE';
 
 export const SET_DO_NOT_DISTURB_REQUEST = '@@status/SET_DO_NOT_DISTURB_REQUEST';
 export const SET_DO_NOT_DISTURB_SUCCESS = '@@status/SET_DO_NOT_DISTURB_SUCCESS';
-export const SET_DO_NOT_DISTURB_FAILURE = '@@status/SET_DO_NOT_DISTURB_SUCCESS';
+export const SET_DO_NOT_DISTURB_FAILURE = '@@status/SET_DO_NOT_DISTURB_FAILURE';
 
 const API_PATH = '/api/v1';
 

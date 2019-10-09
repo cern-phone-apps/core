@@ -23,6 +23,12 @@ const contactsReducer = (state = INITIAL_STATE, action) => {
         adding: false,
         errors: undefined
       };
+
+    case contactsActions.ADD_CONTACTS_FAILURE:
+      return {
+        ...state,
+        errors: action.payload.error
+      };
     default:
       return state;
   }

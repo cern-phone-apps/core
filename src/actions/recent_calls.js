@@ -19,7 +19,8 @@ export function addRecentCall(remote) {
     remote: newRemote,
     missed: newRemote.missed,
     incoming: newRemote.incoming,
-    startTime: newRemote.startTime,
+    startTime: newRemote.startTime || Date.now(),
+    endTime: newRemote.endTime || Date.now(),
     type: ADD_RECENT_CALL,
     callId: newRemote.callId,
     toneCallId: newRemote.toneCallId

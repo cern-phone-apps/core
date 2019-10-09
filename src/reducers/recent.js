@@ -19,8 +19,8 @@ export default (state = INITIAL_STATE, action) => {
             id: lastRecentId,
             name: remote.name,
             phoneNumber: remote.phoneNumber,
-            endTime: Date.now(),
-            startTime: remote.startTime || Date.now(),
+            endTime: remote.endTime,
+            startTime: remote.startTime,
             missed: remote.missed,
             incoming: remote.incoming
           },

@@ -31,7 +31,6 @@ function handleNumbersFailure(state, action) {
 }
 
 function handleServerError(state, action) {
-  console.log(`Handle Server ERROR`);
   let message;
   let statusCode;
   if (action.payload.message) {
@@ -39,10 +38,9 @@ function handleServerError(state, action) {
       message = 'Dial backend is not currently available.';
       statusCode = 31;
     } else if (action.payload.name === 'ApiError') {
-      const { message } = action.payload.message;
+      message = action.payload.message;
       statusCode = action.payload.status ? action.payload.status : -1;
     } else {
-      const { message } = action.payload.message;
       message = action.payload.message;
       statusCode = -1;
     }

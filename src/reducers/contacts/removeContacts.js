@@ -24,10 +24,10 @@ const contactsReducer = (state = INITIAL_STATE, action) => {
         errors: undefined
       };
     case contactsActions.REMOVE_CONTACTS_FAILURE:
-        return {
-          ...state,
-          errors: action.payload.error
-        };
+      return {
+        ...state,
+        errors: action.payload.error
+      };
     default:
       return state;
   }

@@ -67,7 +67,7 @@ describe('MeActionFactory', () => {
         types: [
           '@@status/SET_DO_NOT_DISTURB_REQUEST',
           '@@status/SET_DO_NOT_DISTURB_SUCCESS',
-          '@@status/SET_DO_NOT_DISTURB_SUCCESS'
+          '@@status/SET_DO_NOT_DISTURB_FAILURE'
         ]
       }
     };
