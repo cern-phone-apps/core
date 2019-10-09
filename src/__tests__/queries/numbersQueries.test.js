@@ -1,4 +1,4 @@
-import {getFirstNumberAvailable, getNumberOfMobileNumbers} from '../../queries/numbersQueries';
+import {getFirstNumberAvailable, getNumberOfPhoneNumbers} from '../../queries/numbersQueries';
 
 const numbersMockState = {
   numbers: {
@@ -8,8 +8,8 @@ const numbersMockState = {
 };
 
 describe("numbers queries", () => {
-    it("check the query getNumberOfMobileNumbers", () => {
-        const number = getNumberOfMobileNumbers(numbersMockState)()
+    it("check the query getNumberOfPhoneNumbers", () => {
+        const number = getNumberOfPhoneNumbers(numbersMockState)()
         expect(number).toEqual(2);
     });
   

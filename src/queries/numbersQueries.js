@@ -1,4 +1,4 @@
-export const getNumberOfMobileNumbers = (numbersState) => () => {
+export const getNumberOfPhoneNumbers = (numbersState) => () => {
   return numbersState.numbers.personal.length + numbersState.numbers.shared.length;
 };
 
