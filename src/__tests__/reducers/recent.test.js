@@ -42,4 +42,26 @@ describe('recent calls reducer', () => {
       ]
     });
   });
+
+  it('it handles CLEAR_RECENT_CALLS', () => {
+    const remote = {
+      name: 'John Doe',
+      phoneNumber: '123456',
+      mised: true,
+      incoming: false,
+      startTime: 123456,
+      endTime: 123457
+    };
+
+    expect(
+      reducer(initialState, {
+        type: actions.CLEAR_RECENT_CALLS,
+        remote
+      })
+    ).toEqual({
+      ...initialState,
+      lastRecentId: 0,
+      recentCalls: []
+    });
+  });
 });

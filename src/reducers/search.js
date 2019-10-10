@@ -6,32 +6,6 @@ const INITIAL_STATE = {
   searchEnable: false
 };
 
-/**
- * Formats an array of users to a format for the search results field.
- * The only fields that matter here for the search field are title and description.
- *
- * @param usersArray Array of dict
- * @returns {*} Array of dict with the users formatted.
- */
-export function getUsersFormattedForSearch(usersArray) {
-  if (usersArray === undefined) {
-    return [];
-  }
-
-  return usersArray.slice(0, 9).map((user, index) => {
-    const division = user.division === '[]' ? '' : user.division;
-    const group = user.cernGroup === '[]' ? '' : `-${user.cernGroup}`;
-    const section = user.cernSection === '[]' ? '' : `-${user.cernSection}`;
-    const { displayName } = user;
-    return {
-      index,
-      title: displayName,
-      description: `${division}${group}${section}`,
-      username: user.username
-    };
-  });
-}
-
 function setUserSelected(state, action) {
   return {
     ...state,
