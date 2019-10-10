@@ -23,7 +23,7 @@ import profileReducer from './reducers/profile';
 
 import callForwardingReducer from './reducers/call_forwarding';
 import contactsReducer from './reducers/contacts';
-
+import {getFirstNumberAvailable, getNumberOfPhoneNumbers} from './queries/numbersQueries'
 import * as util from './util';
 
 export {
@@ -54,5 +54,8 @@ export {
   numbersActions,
   recentCallsActions,
   searchActions,
-  usersActionFactory
+  usersActionFactory,
+  /* Queries */
+  getFirstNumberAvailable,
+  getNumberOfPhoneNumbers,
 };
