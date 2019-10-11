@@ -4,7 +4,10 @@ const INITIAL_STATE = {
   fetching: false,
   error: undefined,
   activeNumber: undefined,
-  numbers: []
+  numbers: {
+    personal: [],
+    shared: [],
+ }
 };
 
 function handleNumbersFailure(state, action) {
