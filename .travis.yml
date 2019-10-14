@@ -9,6 +9,7 @@ before_install:
   - sudo apt-get install -y libsecret-1-dev
 
 install:
+  - npm install -g codecov
   - yarn
 
 stages:
@@ -24,6 +25,7 @@ jobs:
         - ./cc-test-reporter before-build
       script:
         - yarn test --coverage
+        - codecov
       # Pipe the coverage data to Code Climate
       after_script:
         - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
