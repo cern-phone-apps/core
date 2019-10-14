@@ -6,7 +6,10 @@ describe('numbers reducer', () => {
     fetching: false,
     error: undefined,
     activeNumber: undefined,
-    numbers: []
+    numbers: {
+      personal: [],
+      shared: [],
+    }
   };
 
   it('should return the initial state', () => {
