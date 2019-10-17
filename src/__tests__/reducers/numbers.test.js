@@ -38,7 +38,7 @@ describe('numbers reducer', () => {
       ...initialState,
       error: {
         message: 'Unknown error',
-        statusCode: 999
+        statusCode: '999'
       },
       fetching: false
     });
@@ -157,8 +157,8 @@ describe('numbers reducer', () => {
     ).toEqual({
       ...initialState,
       error: {
-        message: 'undefined error',
-        statusCode: 401
+        message: 'Unable to connect to the Dial Backend',
+        statusCode: 'API-1'
       }
     });
   });

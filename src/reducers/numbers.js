@@ -6,8 +6,8 @@ const INITIAL_STATE = {
   activeNumber: undefined,
   numbers: {
     personal: [],
-    shared: [],
- }
+    shared: []
+  }
 };
 
 function handleNumbersFailure(state, action) {
@@ -23,7 +23,10 @@ function handleNumbersFailure(state, action) {
       statusCode: action.payload.response.result.error.code
     };
   } else {
-    error = { message: 'undefined error', statusCode: 401 };
+    error = {
+      message: 'Unable to connect to the Dial Backend',
+      statusCode: 'API-1'
+    };
   }
 
   return {
@@ -49,7 +52,7 @@ function handleServerError(state, action) {
     }
   } else {
     message = 'Unknown error';
-    statusCode = 999;
+    statusCode = '999';
   }
 
   return {
