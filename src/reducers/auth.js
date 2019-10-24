@@ -50,7 +50,7 @@ export default (state = INITIAL_STATE, action) => {
         authInProgress: false,
         requestingToken: false,
         authToken: undefined,
-        error: createError(action)
+        error: 'DB-42'
       };
     case authActions.LOGIN_SUCCESS:
       return {
