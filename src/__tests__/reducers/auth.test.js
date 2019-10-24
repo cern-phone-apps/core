@@ -48,10 +48,7 @@ describe('dialpad reducer', () => {
       })
     ).toEqual({
       ...initialState,
-      error: {
-        message: 'Unknown error',
-        statusCode: 999
-      }
+      error: 'DB-42'
     });
   });
 
