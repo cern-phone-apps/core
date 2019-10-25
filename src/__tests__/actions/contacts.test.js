@@ -102,7 +102,7 @@ describe('ContactsActionFactory', () => {
         method: 'DELETE',
         headers: "header-example",
         options: { timeout: 3000 },
-        body: "{\"personId\":\"12345\"}",
+        body: "{\"username\":\"12345\"}",
         types: [
           '@@contacts/REMOVE_CONTACTS_REQUEST',
           '@@contacts/REMOVE_CONTACTS_SUCCESS',
