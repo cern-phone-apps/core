@@ -71,7 +71,7 @@ export default function(
         ]
       }
     }),
-    removeUserContact: personId => ({
+    removeUserContact: username => ({
       [RSAA]: {
         endpoint: buildApiURL('/contacts/'),
         method: 'DELETE',
@@ -80,7 +80,7 @@ export default function(
         headers: authHandlerClass.withAuth({
           'Content-Type': 'application/json'
         }),
-        body: JSON.stringify({ personId }),
+        body: JSON.stringify({ username }),
         types: [
           REMOVE_CONTACTS_REQUEST,
           REMOVE_CONTACTS_SUCCESS,
