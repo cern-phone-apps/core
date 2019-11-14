@@ -19,8 +19,7 @@ export default function (
   return {
     getAlerts: () => ({
       [RSAA]: {
-        // endpoint: buildApiURL('/alerts/'),
-        endpoint: 'http://localhost:8080/api/v1/alerts/',
+        endpoint: buildApiURL('/alerts/'),
         method: 'GET',
         credentials: 'include',
         options: { timeout: 3000 },
