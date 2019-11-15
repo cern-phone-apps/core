@@ -11,7 +11,7 @@ export default (state = INITIAL_STATE, action) => {
       const { remote } = action;
       const lastRecentId = state.lastRecentId + 1;
       const checkLimit = (list) => {
-        if (list.length >== 50)
+        if (list.length >= 50)
           list.pop();
         return (list);
       };
