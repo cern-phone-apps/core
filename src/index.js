@@ -5,7 +5,7 @@ import meActionFactory, * as meActions from './actions/me';
 import numbersActionFactory, * as numbersActions from './actions/numbers';
 import contactsActionFactory, * as contactsActions from './actions/contacts';
 import usersActionFactory from './actions/users';
-import alertsActionFactory from '../actions/alerts';
+import alertsActionFactory from './actions/alerts';
 
 // Only actions
 import * as callActions from './actions/call';
@@ -17,7 +17,7 @@ import * as searchActions from './actions/search';
 // Reducers
 import authReducer from './reducers/auth';
 import callsReducer from './reducers';
-import alertsReducer from '../reducers/alerts';
+import alertsReducer from './reducers/alerts';
 import meReducer from './reducers/me';
 import recentCallsReducer from './reducers/recent';
 import doNotDisturbReducer from './reducers/do_not_disturb';
@@ -25,7 +25,10 @@ import profileReducer from './reducers/profile';
 
 import callForwardingReducer from './reducers/call_forwarding';
 import contactsReducer from './reducers/contacts';
-import {getFirstNumberAvailable, getNumberOfPhoneNumbers} from './queries/numbersQueries'
+import {
+  getFirstNumberAvailable,
+  getNumberOfPhoneNumbers
+} from './queries/numbersQueries';
 import * as util from './util';
 
 export {
@@ -61,5 +64,5 @@ export {
   usersActionFactory,
   /* Queries */
   getFirstNumberAvailable,
-  getNumberOfPhoneNumbers,
+  getNumberOfPhoneNumbers
 };
