@@ -113,8 +113,7 @@ describe('calls reducer', () => {
       remote: {
         missed: false,
         startTime: 12345
-      },
-      startTime: 12345
+      }
     });
   });
 
