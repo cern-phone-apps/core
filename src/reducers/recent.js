@@ -10,7 +10,11 @@ export default (state = INITIAL_STATE, action) => {
     case recentCallsActions.ADD_RECENT_CALL: {
       const { remote } = action;
       const lastRecentId = state.lastRecentId + 1;
-
+      const checkLimit = (list) => {
+        if (list.length >= 50)
+          list.pop();
+        return (list);
+      };
       return {
         ...state,
         lastRecentId,
@@ -24,7 +28,7 @@ export default (state = INITIAL_STATE, action) => {
             missed: remote.missed,
             incoming: remote.incoming
           },
-          ...state.recentCalls
+          ...checkLimit(state.recentCalls)
         ]
       };
     }

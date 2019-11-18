@@ -64,4 +64,26 @@ describe('recent calls reducer', () => {
       recentCalls: []
     });
   });
+  it('Limits to 50 calls', () => {
+    let state = [];
+    for (let a = 0; a < 50; a++) {
+      state.push({
+        id: a,
+        name: "pixel",
+        phoneNumber: "pixel",
+        endTime: "pixel",
+        startTime: "pixel",
+        missed: "pixel",
+        incoming: "pixel"
+      });
+    }
+    expect(reducer({ lastRecentId: 0, recentCalls: state }, { type: actions.ADD_RECENT_CALL, remote: {
+      name: "test",
+      phoneNumber: "0000",
+      endTime: 65404098461,
+      startTime: 6546987987,
+      missed: 1,
+      incoming: true
+    } }).recentCalls.length).toBe(50);
+  });
 });
