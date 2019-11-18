@@ -43,7 +43,6 @@ describe('call actions', () => {
     };
     const result = callActions.setCallAccepted();
     expect(result.type).toEqual(expectedAction.type);
-    expect(typeof result.startTime ).toBe('number')
   });
 
   it("creates an action to CALL_REJECTED", () => {
