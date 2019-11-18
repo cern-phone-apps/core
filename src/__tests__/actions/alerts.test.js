@@ -1,5 +1,5 @@
 import React from 'react';
-import Alerts from '../../actions/Alerts';
+import Alerts from '../../actions/alerts';
 
 describe('Alerts', () => {
   it('Alerts action returns alerts', () => {
