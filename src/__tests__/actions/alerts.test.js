@@ -1,4 +1,3 @@
-import React from 'react';
 import Alerts from '../../actions/alerts';
 
 describe('Alerts', () => {

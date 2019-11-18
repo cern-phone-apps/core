@@ -1,5 +1,4 @@
-import alertsReducer from '../../reducers/Alerts';
-import * as alertsAction from '../../actions/Alerts';
+import alertsReducer from '../../reducers/alerts';
 
 describe('Alerts', () => {
     it('Alerts reducer returns correctly', () => {
