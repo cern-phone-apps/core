@@ -1,4 +1,3 @@
-import React from 'react';
 import alertsReducer from '../../reducers/Alerts';
 
 describe('Alerts', () => {
