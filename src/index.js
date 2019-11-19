@@ -5,7 +5,7 @@ import meActionFactory, * as meActions from './actions/me';
 import numbersActionFactory, * as numbersActions from './actions/numbers';
 import contactsActionFactory, * as contactsActions from './actions/contacts';
 import usersActionFactory from './actions/users';
-import alertsActionFactory from './actions/alerts';
+import * as alertsActionFactory from './actions/alerts';
 
 // Only actions
 import * as callActions from './actions/call';
