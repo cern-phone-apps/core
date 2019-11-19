@@ -1,13 +1,13 @@
 import { RSAA } from 'redux-api-middleware';
 
-export const SEEN_ALERT = '@@alerts/GET_ALERTS_REQUEST';
+export const SEEN_ALERT = '@@alerts/SEEN_ALERT';
 export const GET_ALERTS_REQUEST = '@@alerts/GET_ALERTS_REQUEST';
 export const GET_ALERTS_SUCCESS = '@@alerts/GET_ALERTS_SUCCESS';
 export const GET_ALERTS_FAILURE = '@@alerts/GET_ALERTS_FAILURE';
 
 const API_PATH = '/api/v1';
 
-export default function (
+export function fetchAlerts(
   apiEndpoint,
   type = 'mobile',
   tokenHandlerClass = null
@@ -28,9 +28,13 @@ export default function (
         }),
         types: [GET_ALERTS_REQUEST, GET_ALERTS_SUCCESS, GET_ALERTS_FAILURE]
       }
-    }),
-    alertSeen: (id) => ({
-      type: SEEN_ALERT
     })
+  };
+}
+
+export function alertSeen(id) {
+  return {
+    type: SEEN_ALERT,
+    id: id
   };
 }
