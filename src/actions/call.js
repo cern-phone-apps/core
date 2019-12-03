@@ -66,7 +66,8 @@ export function setIsReceivingCall(callerNumber, callerName, uuid) {
  */
 export function setCallAccepted() {
   return {
-    type: CALL_ACCEPTED
+    type: CALL_ACCEPTED,
+    startTime: Date.now()
   };
 }
 
